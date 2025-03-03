@@ -28,8 +28,8 @@ app.post("/newmovie", async(req,res)=>{
 
     try {
     const {moviename , review , collected}=req.body
-    const newmovie= new User({moviename, review , collected})
-    if(!moviename || !review || !collected){
+    const newmovie= new User({title, director , genre,releaseYear,availableCopies})
+    if(!title || !genre || !releaseYear || !director || !availableCopies ){
          res.status(400).json({message:"Bad request"})
     }
     
